@@ -78,6 +78,7 @@
   .hangout-btn {
 
     height: 30px !important;
+    line-height: 30px;
     padding: 0;
   }
 }
@@ -93,7 +94,8 @@
   }
 
   dd {
-    margin-left: 90px;
+    margin-left: 110px;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

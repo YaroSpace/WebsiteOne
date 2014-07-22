@@ -2,12 +2,6 @@
   box-sizing: border-box;
 }
 
-.event-live-link {
-  color: #d35400;
-  font-size: large;
-  font-weight: bold;
-}
-
 #eventContainer {
   display: flex;
   flex-flow: row;
@@ -153,6 +147,7 @@
 .event-name {
   @extend .row;
   margin: 0px;
+  margin-bottom: 10px;
 }
 
 .event-details {
@@ -166,4 +161,22 @@
   @extend .well-sm;
   margin-left: 0;
   margin-right: 0;
+}
+
+.event-live-link {
+  @extend .btn;
+  @extend .btn-success;
+  width: 130px;
+  white-space: normal;
+}
+
+.event-edit-schedule {
+  @extend .btn;
+  @extend .btn-info;
+  width: 130px;
+  white-space: normal;
+}
+
+.event-schedule {
+  vertical-align: middle;
 }
