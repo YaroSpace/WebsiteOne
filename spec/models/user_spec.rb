@@ -167,4 +167,24 @@ describe User, :type => :model do
       expect(results).not_to include('Janice')
     end
   end
+
+  describe '#assign_null_proper_associations' do 
+    before do
+      @user = FactoryGirl.create(:user)
+      @project = FactoryGirl.create(:project, user: @user)
+      @documents = FactoryGirl.create(:documents, user: @user)
+      @articles = FactoryGirl.create(:articles, user: @user)
+      @hangouts = FactoryGirl.create(:hangouts, user: @user)
+
+    end
+    it 'gets triggered by #destroy' do
+      @user.delete
+      expect(@user).to receive(:assign_null_proper_associations)
+    end
+    it 'assigns NullUser to associated relations' do
+      @user.delete
+      expect(@project.user).to be_kind_of(NullUser)
+      
+    end
+  end
 end

@@ -30,6 +30,8 @@ class User < ActiveRecord::Base
   has_many :articles
   has_many :hangouts
 
+  before_destroy :assign_null_proper_associations
+
   self.per_page = 30
 
   def apply_omniauth(omniauth)
@@ -73,4 +75,15 @@ class User < ActiveRecord::Base
     where(display_profile: true)
       .order(:created_at)
   end
+
+  private 
+
+  def assign_null_proper_associations
+    debugger
+    null_user = NullUser.new
+    project = self.project 
+    project.user = null_user
+    project.save
+  end
+
 end
