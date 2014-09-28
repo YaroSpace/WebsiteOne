@@ -91,6 +91,6 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'puma' # Puma web server
-  gem 'newrelic_rpm' # New Relic analytics
+  # gem 'newrelic_rpm' # New Relic analytics
 end
 
