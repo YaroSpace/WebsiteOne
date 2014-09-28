@@ -90,7 +90,7 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'unicorn' # Unicorn web server
+  gem 'puma' # Puma web server
   gem 'newrelic_rpm' # New Relic analytics
 end
 
